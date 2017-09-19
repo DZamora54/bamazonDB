@@ -33,11 +33,6 @@ function queryProducts() {
     message: "How many units would you like to buy?"
   }
 ]).then(function(answers) {
-  // initializes the variable newguy to be a programmer object which will take
-  // in all of the user's answers to the questions above
-  //var desiredItem = new Programmer(answers.name, answers.position, answers.age, answers.language);
-  // printInfo method is run to show that the newguy object was successfully created and filled
-  //newGuy.printInfo();
   console.log("Do you want to buy " + answers.units + " of " +answers.item_id + "?");
 });
   });
