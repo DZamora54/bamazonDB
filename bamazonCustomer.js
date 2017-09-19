@@ -33,6 +33,13 @@ function queryProducts() {
     message: "How many units would you like to buy?"
   }
 ]).then(function(answers) {
-  console.log("Do you want to buy " + answers.units + " of " +answers.item_id + "?");
+  console.log("You are buying " + answers.units + " of item " +answers.item_id + ".");
 });
   });
+
+  // logs the actual query being run
+  console.log(query.sql);
+        connection.end();
+
+}
+
