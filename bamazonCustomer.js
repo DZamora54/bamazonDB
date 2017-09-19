@@ -24,19 +24,20 @@ function queryProducts() {
     for(var i = 0; i < res.length; i++) {
       console.log("Item ID: " + res[i].item_id + "    Product name: " + res[i].product_name + "    Department name: " + res[i].department_name + "    Price: " + res[i].price + "    Stock quantity: " + res[i].stock_quantity + "\n---------------------------------------------------------------------------------------------------\n");
     }
+    inquirer.prompt([
+  {
+    name: "item_id",
+    message: "What is the ID of the product you would like to buy?"
+  }, {
+    name: "units",
+    message: "How many units would you like to buy?"
+  }
+]).then(function(answers) {
+  // initializes the variable newguy to be a programmer object which will take
+  // in all of the user's answers to the questions above
+  //var desiredItem = new Programmer(answers.name, answers.position, answers.age, answers.language);
+  // printInfo method is run to show that the newguy object was successfully created and filled
+  //newGuy.printInfo();
+  console.log("Do you want to buy " + answers.units + " of " +answers.item_id + "?");
+});
   });
-
-var userPrompt = function() {
-  inquirer.prompt({
-    type: 'input',
-    name: 'item_id',
-    message: 'What is the ID of the item you would like to buy?',
-  }).then(function(answer) {
-    console.log(answer);
-  })
-}
-  // logs the actual query being run
-  console.log(query.sql);
-        connection.end();
-
-}
