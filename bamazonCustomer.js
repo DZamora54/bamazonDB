@@ -12,10 +12,8 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log("connected as id " + connection.threadId);
+  //console.log("connected as id " + connection.threadId);
   queryProducts();
-  //userPrompt(); 
-  
 });
 
 function queryProducts() {
@@ -38,7 +36,7 @@ function queryProducts() {
   });
 
   // logs the actual query being run
-  console.log(query.sql);
+  //console.log(query.sql);
         connection.end();
 
 }
